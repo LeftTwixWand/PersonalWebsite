@@ -84,7 +84,7 @@ function NavBar() {
                 </a>
               </div>
               <HashLink to="#connect">
-                <button className="vvd">
+                <button>
                   <span>Let’s Connect</span>
                 </button>
               </HashLink>
