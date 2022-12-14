@@ -1,6 +1,5 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# This project made by video tutorial:
+[React Project Tutorial: Build a Responsive Portfolio Website / Advanced Animations (2022)](https://youtu.be/hYv6BM2fWd8)
 
 ## Available Scripts
 
