@@ -51,15 +51,6 @@ function NavBar() {
                 Home
               </Nav.Link>
               <Nav.Link
-                href="#skills"
-                className={
-                  activeLink === "skills" ? "active navbar-link" : "navbar-link"
-                }
-                onClick={() => onUpdateActiveLink("skills")}
-              >
-                Skills
-              </Nav.Link>
-              <Nav.Link
                 href="#projects"
                 className={
                   activeLink === "projects"
@@ -73,13 +64,13 @@ function NavBar() {
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                <a href="#">
+                <a href="https://www.linkedin.com/in/vhorbachov/">
                   <img src={navIcon1} alt="" />
                 </a>
-                <a href="#">
+                <a href="https://github.com/LeftTwixWand">
                   <img src={navIcon2} alt="" />
                 </a>
-                <a href="#">
+                <a href="http://instagram.com/left.twix.wand">
                   <img src={navIcon3} alt="" />
                 </a>
               </div>

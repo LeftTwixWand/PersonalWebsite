@@ -3,115 +3,97 @@ import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import projImg4 from "../assets/img/project-img4.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
-import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
   const projects = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Inventory",
+      description:
+        "New version of Microsoft Inventory sample, built on WinUI 3, using DDD and Clean Architecture approach.",
       imgUrl: projImg1,
+      category: "open-source",
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Modern CQRS",
+      description:
+        "Shows, how to implement CQRS architecture approach, using Autofac and MediatR libraries.",
       imgUrl: projImg2,
+      category: "open-source",
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "React Pizza",
+      description:
+        "Here I'm learning ReactJS by YouTube course from Archakov Blog",
       imgUrl: projImg3,
+      category: "pet",
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
+      title: "WinUI 3",
+      description: "Article about the new age of Windows development.",
+      imgUrl: projImg4,
+      category: "article",
     },
   ];
 
   return (
-    <section className="project" id="project">
+    <section className="project" id="projects">
       <Container>
         <Row>
           <Col size={12}>
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <div
-                  className={
-                    isVisible ? "animate__animated animate__fadeIn" : ""
-                  }
-                >
-                  <h2>Projects</h2>
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
-                  </p>
-                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                    <Nav
-                      variant="pills"
-                      className="nav-pills mb-5 justify-content-center align-items-center"
-                      id="pills-tab"
-                    >
-                      <Nav.Item>
-                        <Nav.Link eventKey="first">Tab 1</Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item>
-                        <Nav.Link eventKey="second">Tab 2</Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item>
-                        <Nav.Link eventKey="third">Tab 3</Nav.Link>
-                      </Nav.Item>
-                    </Nav>
-                    <Tab.Content
-                      id="slideInUp"
-                      className={
-                        isVisible ? "animate__animated animate__slideInUp" : ""
-                      }
-                    >
-                      <Tab.Pane eventKey="first">
-                        <Row>
-                          {projects.map((project, index) => {
-                            return <ProjectCard key={index} {...project} />;
-                          })}
-                        </Row>
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="section">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Cumque quam, quod neque provident velit, rem
-                          explicabo excepturi id illo molestiae blanditiis,
-                          eligendi dicta officiis asperiores delectus quasi
-                          inventore debitis quo.
-                        </p>
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="third">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Cumque quam, quod neque provident velit, rem
-                          explicabo excepturi id illo molestiae blanditiis,
-                          eligendi dicta officiis asperiores delectus quasi
-                          inventore debitis quo.
-                        </p>
-                      </Tab.Pane>
-                    </Tab.Content>
-                  </Tab.Container>
-                </div>
-              )}
-            </TrackVisibility>
+            <h2>Projects</h2>
+            <p>
+              At free time I like to experiment with new technologies,
+              contributing open source projects, participate hackathons and
+              writing technical articles.
+            </p>
+            <Tab.Container id="projects-tabs" defaultActiveKey="first">
+              <Nav
+                variant="pills"
+                className="nav-pills mb-5 justify-content-center align-items-center"
+                id="pills-tab"
+              >
+                <Nav.Item>
+                  <Nav.Link eventKey="first">Open source</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="second">Pet</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="third">Articles</Nav.Link>
+                </Nav.Item>
+              </Nav>
+              <Tab.Content id="slideInUp">
+                <Tab.Pane eventKey="first">
+                  <Row>
+                    {projects
+                      .filter((project) => project.category == "open-source")
+                      .map((project, index) => {
+                        return <ProjectCard key={index} {...project} />;
+                      })}
+                  </Row>
+                </Tab.Pane>
+                <Tab.Pane eventKey="second">
+                  <Row>
+                    {projects
+                      .filter((project) => project.category == "pet")
+                      .map((project, index) => {
+                        return <ProjectCard key={index} {...project} />;
+                      })}
+                  </Row>
+                </Tab.Pane>
+                <Tab.Pane eventKey="third">
+                  <Row>
+                    {projects
+                      .filter((project) => project.category == "article")
+                      .map((project, index) => {
+                        return <ProjectCard key={index} {...project} />;
+                      })}
+                  </Row>
+                </Tab.Pane>
+              </Tab.Content>
+            </Tab.Container>
           </Col>
         </Row>
       </Container>

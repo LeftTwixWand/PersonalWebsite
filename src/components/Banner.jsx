@@ -11,7 +11,7 @@ export const Banner = () => {
   const [text, setText] = React.useState("");
   const [delta, setDelta] = React.useState(300 - Math.random() * 100);
   const [index, setIndex] = React.useState(1);
-  const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
+  const toRotate = ["Engineer", "Contributor", "Enthusiast"];
   const period = 2000;
 
   React.useEffect(() => {
@@ -65,21 +65,18 @@ export const Banner = () => {
                 >
                   <span className="tagline">Welcome to my website</span>
                   <h1>
-                    {`Hi! I'm Vlad`}{" "}
-                    <span
-                      className="txt-rotate"
-                      dataPeriod="1000"
-                      data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'
-                    >
+                    {`Hi! I'm Vlad`}
+                    <br />
+                    <span className="txt-rotate">
                       <span className="wrap">{text}</span>
                     </span>
                   </h1>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    I am a software engineer at Microsoft. I am working on
+                    creating software to optimize the process of doing business
+                    and not only. As the main direction, I prefer complext
+                    client-server applications. My colleagues would describe me
+                    as a very positive and friendly person.
                   </p>
                   <button onClick={() => console.log("connect")}>
                     Let’s Connect <ArrowRightCircle size={25} />
